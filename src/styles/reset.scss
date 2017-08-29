@@ -15,8 +15,6 @@ body {
   background-color: #f3f4f8;
 }
 
-@import "./btn";
-
 a,
 a:focus,
 a:hover {
@@ -41,23 +39,49 @@ input, input::-webkit-input-placeholder, textarea, textarea::-webkit-input-place
   color: rgb(31, 45, 61);
 }
 
-/* 修改 nprogress 进度条颜色 */
-$lightBlue: #a5e8ff;
-#nprogress {
-  background: $lightBlue !important;
-  .bar {
-    background: $lightBlue !important;
-  }
-  .peg {
-    box-shadow: 0 0 10px $lightBlue, 0 0 5px $lightBlue !important;
-  }
-  .spinner-icon {
-    border-top-color: $lightBlue !important;
-    border-left-color: $lightBlue !important;
-  }
-}
-
 ::selection {
   background: #4cb3ff;
   color: #fff;
+}
+/* form btn */
+$green: #2a7b87;
+@mixin formBtn($a: $green) {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: $a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .3), 0 0 1px rgba(0, 0, 0, .1),
+  inset 0 1px 0 rgba(255, 255, 255, .25), inset 0 -1px 0 rgba(0, 0, 0, .15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.form-save {
+  width: 150px;
+  margin: 30px auto;
+  font-size: 18px;
+  line-height: 2;
+  background-color: $green;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.github-corner {
+  svg {
+    fill: $green;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+  }
+  &:hover .octo-arm{
+    animation:octocat-wave 560ms ease-in-out
+  }
+  @keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
 }

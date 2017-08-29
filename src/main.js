@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import './styles/index.css'
 import plugins from './plugin/index'
-import { Button, Select, Dialog, Option, Switch, Tabs, TabPane, Message } from 'element-ui'
+import { Button, Select, Dialog, Option, Switch, Tabs, TabPane, Message, MessageBox } from 'element-ui'
 
 // Vue.use(ElementUI)
 Vue.use(plugins)
@@ -16,7 +16,9 @@ Vue.use(Option)
 Vue.use(Switch)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(TabPane)
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 
 Vue.config.productionTip = false
 

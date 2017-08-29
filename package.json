@@ -14,7 +14,6 @@
     "axios": "^0.16.2",
     "element-theme-default": "^1.4.3",
     "element-ui": "^1.4.3",
-    "nprogress": "^0.2.0",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
     "vuedraggable": "^2.14.1"
