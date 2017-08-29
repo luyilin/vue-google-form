@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  font-family: PingFangSC-Light,'Avenir',Helvetica,Hiragino Sans GB,Arial,Microsoft YaHei,sans-serif;
+  //font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+body {
+  background-color: #f3f4f8;
+}
+
+@import "./btn";
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+input, textarea {
+  outline: none;
+}
+
+input, input::-webkit-input-placeholder, textarea, textarea::-webkit-input-placeholder {
+  font-family: PingFangSC-Light,'Avenir',Helvetica,Hiragino Sans GB,Arial,Microsoft YaHei,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  color: rgb(31, 45, 61);
+}
+
+/* 修改 nprogress 进度条颜色 */
+$lightBlue: #a5e8ff;
+#nprogress {
+  background: $lightBlue !important;
+  .bar {
+    background: $lightBlue !important;
+  }
+  .peg {
+    box-shadow: 0 0 10px $lightBlue, 0 0 5px $lightBlue !important;
+  }
+  .spinner-icon {
+    border-top-color: $lightBlue !important;
+    border-left-color: $lightBlue !important;
+  }
+}
+
+::selection {
+  background: #4cb3ff;
+  color: #fff;
+}
