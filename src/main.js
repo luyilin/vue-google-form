@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import './styles/index.css'
 import plugins from './plugin/index'
 import { Button, Select, Dialog, Option, Switch, Tabs, TabPane, Message } from 'element-ui'
@@ -24,7 +23,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   template: '<App/>',
   components: { App },
   render: h => h(App)

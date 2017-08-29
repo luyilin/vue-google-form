@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <create></create>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import create from './components/create.vue'
+  export default {
+    name: 'app',
+    components: {
+      create
+    }
+  }
 </script>
 
 <style lang="scss">
