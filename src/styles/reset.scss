@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: #f3f4f8;
+  background-color: #d2e7ea;
 }
 
 a,
@@ -44,7 +44,7 @@ input, input::-webkit-input-placeholder, textarea, textarea::-webkit-input-place
   color: #fff;
 }
 /* form btn */
-$green: #2a7b87;
+$green: #4ca2ae;
 @mixin formBtn($a: $green) {
   width: 55px;
   height: 55px;

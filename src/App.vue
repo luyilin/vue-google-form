@@ -17,4 +17,5 @@
 
 <style lang="scss">
   @import "./styles/reset";
+  @import url('./assets/iconfont/iconfont.css');
 </style>

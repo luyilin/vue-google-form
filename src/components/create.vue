@@ -1,6 +1,6 @@
 <style lang="scss">
   .form-create-wrap {
-    $green: #2a7b87;
+    $green: #4ca2ae;
     $grey: rgba(0,0,0,.5);
     position: relative;
     width: 80%;
@@ -20,7 +20,7 @@
       .content-wrap {
         flex: 1;
         background-color: #fff;
-        box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+        box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.1);
         margin-right: 10px;
       }
       .form-sidebar {
@@ -49,8 +49,11 @@
         }
       }
     }
+    .title-focus {
+      border-left-color: $green !important;
+    }
     .title {
-      border-left: 3px solid $green;
+      border-left: 3px solid transparent;
       position: relative;
       .add-list {
         width: 50px;
@@ -72,173 +75,178 @@
       }
     }
     .q-wrap {
+      .q-li-focus {
+        border-left-color: $green !important;
+        box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.24);
+      }
       .q-li {
-        box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.1);
-        .q-title-wrap {
+        border-left: 3px solid transparent;
+      }
+      .q-title-wrap {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px !important;
+        .q-index {
+          flex: 1;
+          flex-grow: 0;
+          margin-right: 10px;
+        }
+        .q-title {
+          flex: 1;
+          flex-grow: 2;
+          .li {
+            margin-bottom: 0;
+          }
+        }
+        .q-select {
+          flex: 1;
+          flex-shrink: 0;
+        }
+      }
+      .drap-area {
+        padding: 5px;
+        cursor: move;
+        .icon-tuozhuai {
+          color: lightgray;
+          font-size: 20px;
+          margin-left: 37px;
+        }
+      }
+      .q-item-wrap {
+        padding:  16px 24px 24px 42px;
+      }
+      .q-item {
+        margin-bottom: 10px;
+        /*overflow: hidden;*/
+        .q-radio {
+          margin: 15px auto;
           display: flex;
           align-items: center;
-          margin-bottom: 25px !important;
-          .q-index {
+          .icon-radio {
+            width: 15px;
+            height: 15px;
+            border: 2px solid transparent;
+            margin-right: 15px;
+          }
+          .icon-cirle {
+            border: 2px solid lightgray;
+            border-radius: 50%;
+          }
+          .icon-square {
+            border: 2px solid lightgray;
+            border-radius: 0;
+          }
+          input {
+            flex: 2;
+            margin-right: 15px;
+            border: 1px solid transparent;
+            padding-bottom: 3px;
+            &:focus {
+              border-bottom: 1px solid lightgray;
+            }
+          }
+          i {
             flex: 1;
             flex-grow: 0;
-            margin-right: 10px;
+            color: rgba(0,0,0,0.3);
+            cursor: pointer;
           }
-          .q-title {
-            flex: 1;
-            flex-grow: 2;
-            margin-right: 15px;
-            .li {
-              margin-bottom: 0;
-            }
-          }
-          .q-select {
-            flex: 1;
-            flex-shrink: 0;
+          .radio-add {
+            color: $green;
+            font-weight: bold;
+            cursor: pointer;
+            flex: 0;
           }
         }
-        .drap-area {
-          padding: 5px;
-          cursor: move;
-          .icon-tuozhuai {
-            color: lightgray;
-            font-size: 20px;
-            margin-left: 37px;
+      }
+      .line-wrap {
+        .q-item-line {
+          display: flex;
+          align-items: center;
+          .el-select {
+            width: 70px;
+            .el-input {
+              border: none !important;
+            }
+          }
+          .line-tip {
+            padding: 15px;
           }
         }
-        .q-item-wrap {
-          padding:  16px 24px 24px 42px;
+        .q-radio {
+          input {
+            border-bottom: 1px solid lightgray !important;
+            flex: 0;
+          }
         }
-        .q-item {
-          margin-bottom: 10px;
-          /*overflow: hidden;*/
-          .q-radio {
-            margin: 15px auto;
-            display: flex;
-            align-items: center;
-            .icon-radio {
-              width: 15px;
-              height: 15px;
-              border: 2px solid transparent;
-              margin-right: 15px;
+      }
+      .text-wrap {
+        color: $grey;
+        border-bottom: 1px dotted lightgray;
+        padding-bottom: 5px;
+        width: 60%;
+        text-align: left;
+      }
+      .square-wrap {
+        display: flex;
+        .square-li {
+          flex: 1
+        }
+      }
+      .option-wrap {
+        overflow: hidden;
+        border-top: 1px solid lightgray;
+        .option-list {
+          float: right;
+          li {
+            float: left;
+            list-style: none;
+            margin: 20px 0 0 25px;
+            .icon-copy {
+              font-size: 20px;
             }
-            .icon-cirle {
-              border: 2px solid lightgray;
-              border-radius: 50%;
-            }
-            .icon-square {
-              border: 2px solid lightgray;
-              border-radius: 0;
-            }
-            input {
-              flex: 2;
-              margin-right: 15px;
-              border: 1px solid transparent;
-              padding-bottom: 3px;
-              &:focus {
-                border-bottom: 1px solid lightgray;
-              }
+            .el-icon-delete {
+              font-size: 21px;
+              vertical-align: middle;
             }
             i {
-              flex: 1;
-              flex-grow: 0;
-              color: rgba(0,0,0,0.3);
               cursor: pointer;
             }
-            .radio-add {
+          }
+          .lang-li {
+            margin: 15px 8px;
+            display: flex;
+            align-items: center;
+            span {
+              margin-left: 10px;
+              cursor: pointer;
               color: $green;
               font-weight: bold;
             }
-          }
-        }
-        .line-wrap {
-          .q-item-line {
-            display: flex;
-            align-items: center;
             .el-select {
-              width: 70px;
-              .el-input {
-                border: none !important;
-              }
-            }
-            .line-tip {
-              padding: 15px;
-            }
-          }
-          .q-radio {
-            input {
-              border-bottom: 1px solid lightgray !important;
-              flex: 0;
+              width: 120px;
             }
           }
         }
-        .text-wrap {
-          color: $grey;
-          border-bottom: 1px dotted lightgray;
-          padding-bottom: 5px;
-          width: 60%;
-          text-align: left;
-        }
-        .square-wrap {
+      }
+      .lang-wrap {
+        border-top: 1px dotted lightgray;
+        padding-top: 20px;
+        .lang-li-wrap {
           display: flex;
-          .square-li {
-            flex: 1
-          }
-        }
-        .option-wrap {
-          overflow: hidden;
-          border-top: 1px solid lightgray;
-          .option-list {
-            float: right;
-            li {
-              float: left;
-              list-style: none;
-              margin: 20px 0 0 25px;
-              .icon-copy {
-                font-size: 20px;
-              }
-              .el-icon-delete {
-                font-size: 21px;
-                vertical-align: middle;
-              }
-              i {
-                cursor: pointer;
-              }
+          .li-text {
+            margin-right: 15px;
+            i {
+              display: block;
+              margin-top: 20px;
+              cursor: pointer;
             }
-            .lang-li {
-              margin: 15px 8px;
-              display: flex;
-              align-items: center;
-              span {
-                margin-left: 10px;
-                cursor: pointer;
-                color: #2a7b87;
-                font-weight: bold;
-              }
-              .el-select {
-                width: 120px;
-              }
+            .el-icon-delete {
+              font-size: 21px;
             }
           }
-        }
-        .lang-wrap {
-          border-top: 1px dotted lightgray;
-          padding-top: 20px;
-          .lang-li-wrap {
-            display: flex;
-            .li-text {
-              margin-right: 15px;
-              i {
-                display: block;
-                margin-top: 20px;
-                cursor: pointer;
-              }
-              .el-icon-delete {
-                font-size: 21px;
-              }
-            }
-            .li-content {
-              flex: 1;
-            }
+          .li-content {
+            flex: 1;
           }
         }
       }
@@ -329,7 +337,7 @@
     <loading :loading="loading"></loading>
     <div class="wrap" v-if="!loading">
       <div class="content-wrap">
-        <div class="item title">
+        <div class="item title" @click="focusTitle($event)" :class="{'title-focus': focusIndex === 'title'}">
           <div class="li">
             <textarea class="form-title" placeholder="表单标题" v-model="data.display_name" @focus="$autoText($event)" @input="$autoText($event)"></textarea>
           </div>
@@ -349,16 +357,16 @@
           </div>
           <div class="li-right">
             <span>允许重复提交</span>
-            <el-switch :width="40" on-color="#2a7b87" v-model="data.repeat_submit" on-text="" off-text="">
+            <el-switch :width="40" on-color="#4ca2ae" v-model="data.repeat_submit" on-text="" off-text="">
             </el-switch>
           </div>
-          <div class="add-list" @click="copyListFn" v-if="!data.question.length">
+          <div class="add-list" @click="addListFn" v-if="!data.question.length">
             <i class="el-icon-plus"></i>
           </div>
         </div>
         <div class="q-wrap">
-          <draggable v-model="data.question" :options="{group:'people'}" :move="onMove" @start="drag=true" @end="onEnd">
-            <div class="q-li" v-for="data, index in data.question" id="items">
+          <draggable v-for="data, index in data.question" :key="index" v-model="data.question" :options="{group:'people'}" :move="onMove" @start="drag=true" @end="onEnd">
+            <div class="q-li" :class="{'q-li-focus': focusIndex === index}" id="items" @click="focusItem($event, index)">
               <div class="drap-area">
                 <i class="iconfont icon-tuozhuai"></i>
               </div>
@@ -366,7 +374,7 @@
                 <div class="q-item q-title-wrap">
                   <div class="q-title">
                     <div class="li">
-                      <textarea class="q-area" placeholder="问题" v-model="content.title" @focus="focusText($event, index)" @input="$autoText($event)"></textarea>
+                      <textarea class="q-area" placeholder="问题" v-model="content.title" @focus="$autoText($event)" @input="$autoText($event)"></textarea>
                     </div>
                   </div>
                   <el-select class="q-select" v-if="focusIndex === index" v-model="data.types" filterable placeholder="请选择">
@@ -382,7 +390,7 @@
                   <div class="q-radio" v-for="item, i in content.answer">
                     <div class="icon-radio" v-if="data.types === '下拉列表' || data.types === '优先级'">{{i + 1}}.</div>
                     <div v-else class="icon-radio" :class="{'icon-cirle': data.types === '单选题', 'icon-square': data.types === '多选题'}"></div>
-                    <input class="radio-input" v-model="item.description" @focus="focusInput(index)">
+                    <input class="radio-input" v-model="item.description">
                     <i class="el-icon-close" v-if="focusIndex === index" @click="deleteRadioFn(index, index1, i)"></i>
                   </div>
                   <div class="q-radio" v-if="focusIndex === index">
@@ -393,7 +401,7 @@
                 </div>
                 <div class="q-item line-wrap" v-if="data.types === '线性量表'">
                   <div class="q-item-line">
-                    <el-select v-model="content.line_answer.line_value" @visible-change="focusInput(index)">
+                    <el-select v-model="content.line_answer.line_value">
                       <el-option
                         v-for="i in lineOptions"
                         :key="i"
@@ -401,7 +409,7 @@
                       </el-option>
                     </el-select>
                     <span class="line-tip">到</span>
-                    <el-select v-model="content.line_answer.line_end_value" @visible-change="focusInput(index)">
+                    <el-select v-model="content.line_answer.line_end_value">
                       <el-option
                         v-for="i in lineEndOptions"
                         :key="i"
@@ -411,11 +419,11 @@
                   </div>
                   <div class="q-radio">
                     <div class="icon-radio">1.</div>
-                    <input class="radio-input" @focus="focusInput(index)" v-model="content.line_answer.line_tag" placeholder="标签（选填）">
+                    <input class="radio-input" v-model="content.line_answer.line_tag" placeholder="标签（选填）">
                   </div>
                   <div class="q-radio">
                     <div class="icon-radio">2.</div>
-                    <input class="radio-input" @focus="focusInput(index)" v-model="content.line_answer.line_end_tag" placeholder="标签（选填）">
+                    <input class="radio-input" v-model="content.line_answer.line_end_tag" placeholder="标签（选填）">
                   </div>
                 </div>
                 <div class="q-item text-wrap" v-if="data.types === '文本题'">文本回答</div>
@@ -423,7 +431,7 @@
                   <div class="square-li">
                     <h4>行</h4>
                     <div class="q-item-line">
-                      <el-select v-model="content.line_answer.line_value" @visible-change="focusInput(index)">
+                      <el-select v-model="content.line_answer.line_value">
                         <el-option
                           v-for="i in lineOptions"
                           :key="i"
@@ -431,7 +439,7 @@
                         </el-option>
                       </el-select>
                       <span class="line-tip">到</span>
-                      <el-select v-model="content.line_answer.line_end_value" @visible-change="focusInput(index)">
+                      <el-select v-model="content.line_answer.line_end_value">
                         <el-option
                           v-for="i in lineEndOptions"
                           :key="i"
@@ -441,18 +449,18 @@
                     </div>
                     <div class="q-radio">
                       <div class="icon-radio">1.</div>
-                      <input class="radio-input" @focus="focusInput(index)" v-model="content.line_answer.line_tag" placeholder="标签（选填）">
+                      <input class="radio-input" v-model="content.line_answer.line_tag" placeholder="标签（选填）">
                     </div>
                     <div class="q-radio">
                       <div class="icon-radio">2.</div>
-                      <input class="radio-input" @focus="focusInput(index)" v-model="content.line_answer.line_end_tag" placeholder="标签（选填）">
+                      <input class="radio-input" v-model="content.line_answer.line_end_tag" placeholder="标签（选填）">
                     </div>
                   </div>
                   <div class="square-li">
                     <h4>列</h4>
                     <div class="q-radio" v-for="item, i in content.answer">
                       <div class="icon-radio">{{i + 1}}.</div>
-                      <input class="radio-input" @focus="focusInput(index)" v-model="item.description">
+                      <input class="radio-input" v-model="item.description">
                       <i class="el-icon-close" v-if="focusIndex === index" @click="deleteRadioFn(index, index1, i)"></i>
                     </div>
                     <div class="q-radio" v-if="focusIndex === index">
@@ -464,14 +472,14 @@
                 <div class="q-item option-wrap" v-if="focusIndex === index">
                   <ul class="option-list">
                     <li>
-                      <i class="iconfont icon-copy" @click="copyListFn()"></i>
+                      <i class="iconfont icon-copy" @click="copyListFn(index)"></i>
                     </li>
                     <li>
                       <i class="el-icon-delete" @click="deleteListFn(index)"></i>
                     </li>
                     <li>
                       <span>必填</span>
-                      <el-switch :width="40" on-color="#2a7b87" v-model="data.is_required" on-text="" off-text="">
+                      <el-switch :width="40" on-color="#4ca2ae" v-model="data.is_required" on-text="" off-text="">
                       </el-switch>
                     </li>
                   </ul>
@@ -482,7 +490,7 @@
         </div>
       </div>
       <div class="form-sidebar" v-if="data.question.length">
-        <div class="sidebar-li" @click="copyListFn">
+        <div class="sidebar-li" @click="addListFn">
           <i class="el-icon-plus"></i>
         </div>
       </div>
@@ -585,13 +593,14 @@
         relatedContext.element.question_id = index + 1
         draggedContext.element.question_id = relatedIndex + 1
       },
-      focusText ($event, i) {
-        that.$autoText($event)
-        if (that.focusIndex === i) return
-        that.focusIndex = i
+      focusTitle (event) {
+        let classList = event.target.classList
+        if (classList.contains('add-list') || classList.contains('el-icon-plus')) return
+        that.focusIndex = 'title'
       },
-      focusInput (i) {
-        if (that.focusIndex === i) return
+      focusItem (event, i) {
+        let classList = event.target.classList
+        if (classList.contains('el-icon-delete') || classList.contains('icon-copy') || that.focusIndex === i) return
         that.focusIndex = i
       },
       addRadioFn (i, j) {
@@ -610,7 +619,12 @@
           input[input.length - 1].focus()
         })
       },
-      copyListFn () {
+      copyListFn (index) {
+        let data = JSON.parse(JSON.stringify(that.data.question[index]))
+        that.data.question.splice(index, 0, data)
+        that.focusIndex = that.data.question.length - 1
+      },
+      addListFn () {
         let codeList = that.editableTabs.map((i) => {
           return that.langCode[that.langList.indexOf(i)]
         })
@@ -642,6 +656,7 @@
       },
       deleteListFn (i) {
         that.data.question.splice(i, 1)
+        that.focusIndex = i === 0 && that.data.question.length > 0 ? i : i - 1
       },
       saveFn () {
       },
